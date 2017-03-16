@@ -2,7 +2,11 @@ FROM kaixhin/vnc
 
 RUN apt-get -y update && \
 	apt-get -y upgrade && \
-	apt-get install -y software-properties-common unzip
+	apt-get install -y \
+		software-properties-common unzip \
+                ca-certificates \
+                openssh-client \
+                curl
 
 # Java installation
 RUN apt-add-repository -y ppa:webupd8team/java && \
